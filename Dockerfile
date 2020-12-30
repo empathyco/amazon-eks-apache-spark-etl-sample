@@ -68,6 +68,7 @@ RUN set -ex && \
 COPY --from=build ${spark_home}/jars /opt/spark/jars
 COPY --from=build ${spark_home}/bin /opt/spark/bin
 COPY --from=build ${spark_home}/sbin /opt/spark/sbin
+COPY --from=build ${spark_home}/examples /opt/spark/examples
 COPY --from=build ${spark_home}/kubernetes/dockerfiles/spark/entrypoint.sh /opt/
 
 FROM spark AS final
